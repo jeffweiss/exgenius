@@ -56,12 +56,8 @@ defmodule ExGenius do
     |> Map.get("result")
     |> Map.get("id")
     
-    song(song_id)
-    |> Map.get("response")
-    |> Map.get("song")
-    |> Map.get("lyrics")
-    |> Map.get("dom")
-    |> deannotate
+    song = ExGenius.Song.find_by_id(song_id, [text_format: "plain"])
+    song.lyrics
     |> Enum.shuffle
     |> Enum.take(num)
 
