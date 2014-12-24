@@ -3,7 +3,7 @@ defmodule ExGenius do
   def search(string) do
     params = %{"q" => string} |> URI.encode_query
     "http://api.genius.com/search?" <> params
-    |> HTTPoison.get!
+    |> HTTPoison.get!(%{"User-Agent" => "ExGenius/0.0.3 (https://github.com/jeffweiss/exgenius)"})
     |> Map.get(:body)
     |> JSX.decode!
   end
@@ -11,7 +11,7 @@ defmodule ExGenius do
   def song(id) when is_integer(id), do: id |> to_string |> song
   def song(id) do
     "http://api.genius.com/songs/" <> id
-    |> HTTPoison.get!
+    |> HTTPoison.get!(%{"User-Agent" => "ExGenius/0.0.3 (https://github.com/jeffweiss/exgenius)"})
     |> Map.get(:body)
     |> JSX.decode!
   end
