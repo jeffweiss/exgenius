@@ -7,7 +7,7 @@ defmodule Exgenius.Mixfile do
 
   def project do
     [app: :exgenius,
-     version: "0.0.2",
+     version: "0.0.3",
      elixir: "~> 1.0",
      name: "ExGenius",
      description: @description,
