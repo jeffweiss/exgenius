@@ -48,7 +48,7 @@ defmodule ExGenius do
   end
 
   def random_lyrics_from(song, num \\ 3) do
-    :random.seed(:erlang.now)
+    :random.seed(:os.timestamp)
     song_id  = search(song)
     |> Map.get("response")
     |> Map.get("hits")

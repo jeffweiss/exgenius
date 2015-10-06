@@ -7,7 +7,7 @@ defmodule Exgenius.Mixfile do
 
   def project do
     [app: :exgenius,
-     version: "0.0.4",
+     version: "0.0.5",
      elixir: "~> 1.0",
      name: "ExGenius",
      description: @description,
@@ -38,7 +38,7 @@ defmodule Exgenius.Mixfile do
   end
 
   defp package do
-    [ contributors: ["Jeff Weiss"],
+    [ maintainers: ["Jeff Weiss"],
       licenses: ["MIT"],
       links: %{"Github" => "https://github.com/jeffweiss/exgenius"} ]
   end
